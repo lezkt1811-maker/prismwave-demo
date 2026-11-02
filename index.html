@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- =====================================================
+     SEO SETTINGS — CHANGE THESE FOR YOUR BUSINESS
+     This is what Google and social media previews show.
+     ===================================================== -->
+<!-- CHANGE YOUR PAGE TITLE HERE -->
+<title>Lunara Astrology — Birth Chart & Intuitive Readings</title>
+<!-- CHANGE YOUR DESCRIPTION HERE (about 150 characters) -->
+<meta name="description" content="Personal astrology readings, cosmic guidance, and intuitive sessions designed to bring clarity to your path. Book a birth chart reading online.">
+<!-- CHANGE YOUR SOCIAL PREVIEW TITLE + DESCRIPTION HERE -->
+<meta property="og:title" content="Lunara Astrology — Align with the sky you were born under">
+<meta property="og:description" content="Personal astrology readings, cosmic guidance, and intuitive sessions designed to bring clarity to your path.">
+<meta property="og:type" content="website">
+<!-- OPTIONAL: add a preview image. Must be a full web address, e.g. https://yoursite.com/assets/preview.jpg -->
+<!-- <meta property="og:image" content="https://yoursite.com/assets/preview.jpg"> -->
+<!-- Browser bar color on phones -->
+<meta name="theme-color" content="#04040c">
+
+<!-- Fonts (free, from Google Fonts) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==================================
+   EASY CUSTOMIZATION START — COLORS
+   Change any color below. Use hex codes like #ff3dae.
+   ================================== */
+:root {
+  --color-background: #04040c;   /* page background (keep it very dark) */
+  --color-surface:    #0a0d1f;   /* navy-black section background */
+  --color-primary:    #2be4ff;   /* electric cyan */
+  --color-secondary:  #7b5cff;   /* vivid violet */
+  --color-pink:       #ff3dae;   /* hot pink accent */
+  --color-magenta:    #d63bff;   /* magenta */
+  --color-blue:       #3d7bff;   /* neon blue */
+  --color-text:       #edebfa;   /* main text */
+  --color-muted:      #aaa7c9;   /* softer text */
+
+  /* Fonts — change the names here if you load different Google Fonts */
+  --font-display: "Bodoni Moda", "Didot", Georgia, serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+/* ==================================
+   EASY CUSTOMIZATION END — COLORS
+   (You don't need to edit anything below to change colors.)
+   ================================== */
+
+:root {
+  --spectrum: linear-gradient(100deg, var(--color-primary), var(--color-blue), var(--color-secondary), var(--color-magenta), var(--color-pink));
+  --glass: rgba(18, 20, 48, 0.55);
+  --line: rgba(170, 167, 201, 0.16);
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --wrap: 1180px;
+  --nav-h: 72px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html, body { overflow-x: hidden; overflow-x: clip; }
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.1; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip-link { position: absolute; left: 12px; top: -60px; z-index: 100; padding: 10px 16px; background: var(--color-text); color: var(--color-background); border-radius: 8px; font-weight: 700; text-decoration: none; }
+.skip-link:focus { top: 12px; }
+
+/* Star field + haze behind everything */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(1px 1px at 12% 18%, #fff9, transparent 60%),
+    radial-gradient(1px 1px at 78% 12%, #fff8, transparent 60%),
+    radial-gradient(1.5px 1.5px at 44% 62%, #fff7, transparent 60%),
+    radial-gradient(1px 1px at 88% 74%, #fff9, transparent 60%),
+    radial-gradient(1px 1px at 24% 84%, #fff6, transparent 60%),
+    radial-gradient(1.5px 1.5px at 64% 32%, #fff8, transparent 60%),
+    radial-gradient(1px 1px at 6% 52%, #fff7, transparent 60%),
+    radial-gradient(1px 1px at 94% 40%, #fff6, transparent 60%),
+    radial-gradient(1px 1px at 52% 8%, #fff7, transparent 60%),
+    radial-gradient(1px 1px at 36% 38%, #fff5, transparent 60%);
+  animation: twinkle 7s ease-in-out infinite alternate;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: -3; pointer-events: none;
+  background:
+    radial-gradient(60vmax 40vmax at 85% -10%, color-mix(in srgb, var(--color-secondary) 16%, transparent), transparent 70%),
+    radial-gradient(50vmax 36vmax at -10% 60%, color-mix(in srgb, var(--color-primary) 8%, transparent), transparent 70%),
+    radial-gradient(40vmax 30vmax at 100% 100%, color-mix(in srgb, var(--color-pink) 9%, transparent), transparent 70%);
+}
+@keyframes twinkle { from { opacity: .55; } to { opacity: 1; } }
+
+.wrap { width: min(100% - 40px, var(--wrap)); margin-inline: auto; }
+.section { padding-block: clamp(72px, 10vw, 128px); scroll-margin-top: var(--nav-h); }
+.section--surface { background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--color-surface) 85%, transparent) 12%, color-mix(in srgb, var(--color-surface) 85%, transparent) 88%, transparent); }
+.section-head { max-width: 640px; margin-bottom: clamp(36px, 5vw, 56px); }
+.section-head--center { margin-inline: auto; text-align: center; }
+.section-title { font-size: clamp(2.1rem, 6.4vw, 3.4rem); }
+.section-intro { margin-top: 16px; color: var(--color-muted); font-size: 1.1rem; }
+.spectral-rule { width: 64px; height: 2px; background: var(--spectrum); border-radius: 2px; margin-bottom: 22px; box-shadow: 0 0 14px color-mix(in srgb, var(--color-secondary) 70%, transparent); }
+.section-head--center .spectral-rule { margin-inline: auto; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 50px; padding: 13px 26px;
+  border-radius: 999px; border: 1px solid transparent;
+  font: 700 0.95rem/1.2 var(--font-body); letter-spacing: 0.02em; text-align: center;
+  text-decoration: none; cursor: pointer;
+  transition: transform .2s ease, box-shadow .25s ease, background-color .25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active { transform: scale(.97); }
+.btn--solid {
+  color: #fff;
+  background: linear-gradient(100deg, var(--color-secondary), var(--color-magenta) 55%, var(--color-pink));
+  box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset, 0 8px 30px -8px color-mix(in srgb, var(--color-pink) 70%, transparent);
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+.btn--solid:hover { box-shadow: 0 0 0 1px rgba(255,255,255,.18) inset, 0 10px 40px -6px color-mix(in srgb, var(--color-pink) 90%, transparent); transform: translateY(-2px); }
+.btn--ghost {
+  color: var(--color-text);
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, var(--spectrum) border-box;
+}
+.btn--ghost:hover { box-shadow: 0 0 24px -4px color-mix(in srgb, var(--color-primary) 55%, transparent); transform: translateY(-2px); }
+.btn--block { width: 100%; }
+.btn--sm { min-height: 44px; padding: 10px 20px; font-size: .88rem; }
+
+/* ---------- Navigation ---------- */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 50; height: var(--nav-h);
+  transition: background-color .3s ease, border-color .3s ease;
+  border-bottom: 1px solid transparent;
+}
+.site-header.is-scrolled, .site-header.menu-open {
+  background: rgba(4, 4, 12, 0.82);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border-bottom-color: var(--line);
+}
+.nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; white-space: nowrap; }
+.brand svg { width: 30px; height: 30px; flex: none; filter: drop-shadow(0 0 6px color-mix(in srgb, var(--color-primary) 60%, transparent)); }
+.nav-menu { display: flex; align-items: center; gap: 30px; list-style: none; margin: 0; padding: 0; }
+.nav-menu a:not(.btn) { text-decoration: none; font-size: .95rem; font-weight: 500; color: var(--color-muted); transition: color .2s; }
+.nav-menu a:not(.btn):hover { color: var(--color-text); }
+.nav-toggle { display: none; }
+
+@media (max-width: 899px) {
+  .nav-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px; margin-right: -8px;
+    background: none; border: 0; color: var(--color-text); cursor: pointer; border-radius: 12px;
+  }
+  .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after {
+    display: block; width: 24px; height: 2px; background: currentColor; border-radius: 2px; position: relative; transition: transform .25s ease, background-color .25s;
+  }
+  .nav-toggle span::before, .nav-toggle span::after { content: ""; position: absolute; left: 0; }
+  .nav-toggle span::before { top: -7px; } .nav-toggle span::after { top: 7px; }
+  .nav-toggle[aria-expanded="true"] span { background: transparent; }
+  .nav-toggle[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span::after { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-menu {
+    display: none;
+    position: absolute; top: var(--nav-h); left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    padding: 8px 20px 24px;
+    background: var(--color-background);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 24px 40px -10px rgba(0,0,0,.7);
+    max-height: calc(100vh - var(--nav-h)); overflow-y: auto;
+  }
+  .nav-menu.is-open { display: flex; }
+  .nav-menu li { border-bottom: 1px solid var(--line); }
+  .nav-menu li:last-child { border-bottom: 0; padding-top: 18px; }
+  .nav-menu a:not(.btn) { display: block; padding: 15px 4px; font-size: 1.05rem; color: var(--color-text); }
+  .nav-menu .btn { width: 100%; }
+}
+
+/* ---------- Hero ---------- */
+.hero { position: relative; padding-top: calc(var(--nav-h) + clamp(28px, 6vw, 72px)); padding-bottom: clamp(56px, 8vw, 96px); }
+.hero-grid { display: grid; gap: clamp(40px, 6vw, 64px); align-items: center; }
+.hero-kicker { font-family: var(--font-display); font-style: italic; font-size: 1.15rem; color: var(--color-primary); margin-bottom: 18px; text-shadow: 0 0 18px color-mix(in srgb, var(--color-primary) 55%, transparent); }
+.hero-title { font-size: clamp(2.6rem, 11vw, 5.4rem); line-height: 1.02; font-weight: 500; text-wrap: balance; }
+.hero-text { margin-top: 22px; max-width: 34rem; font-size: clamp(1.05rem, 2.6vw, 1.2rem); color: var(--color-muted); }
+.hero-actions { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 14px; }
+.hero-actions .btn { flex: 1 1 200px; }
+
+.hero-visual { position: relative; width: min(100%, 460px); margin-inline: auto; aspect-ratio: 1; }
+.hero-visual::before {
+  content: ""; position: absolute; inset: 8%; border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-secondary) 45%, transparent), transparent 68%);
+  filter: blur(30px); animation: pulse 6s ease-in-out infinite;
+}
+.wheel-ring {
+  position: absolute; inset: 2%; border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--color-primary), var(--color-blue), var(--color-secondary), var(--color-magenta), var(--color-pink), var(--color-primary));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+          mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--color-primary) 60%, transparent));
+  animation: spin 60s linear infinite;
+}
+.wheel { position: absolute; inset: 0; width: 100%; height: 100%; }
+.wheel .spin-slow { transform-origin: 0 0; animation: spin 140s linear infinite; }
+.wheel .spin-rev { transform-origin: 0 0; animation: spin 90s linear infinite reverse; }
+.wheel text { font-family: "Segoe UI Symbol", "Noto Sans Symbols", "DejaVu Sans", var(--font-body); }
+.moon-phases { display: flex; justify-content: center; gap: 14px; margin-top: 18px; }
+.moon-phases svg { width: 22px; height: 22px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%, 100% { opacity: .7; } 50% { opacity: 1; } }
+
+/* hero entrance — one orchestrated moment */
+.rise { opacity: 0; transform: translateY(14px); animation: rise .9s cubic-bezier(.2,.7,.2,1) forwards; }
+.rise:nth-child(2) { animation-delay: .1s; } .rise:nth-child(3) { animation-delay: .2s; } .rise:nth-child(4) { animation-delay: .3s; }
+.hero-visual.rise { animation-delay: .25s; animation-duration: 1.4s; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+
+@media (min-width: 900px) {
+  .hero { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; }
+  .hero-grid { grid-template-columns: 1.1fr 0.9fr; }
+  .hero-actions .btn { flex: 0 0 auto; }
+}
+
+/* ---------- Trust strip ---------- */
+.trust { border-block: 1px solid var(--line); background: color-mix(in srgb, var(--color-surface) 70%, transparent); }
+.trust-list { list-style: none; margin-block: 0; padding: 26px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 16px; }
+.trust-list li { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: .95rem; line-height: 1.3; }
+.trust-list svg { width: 28px; height: 28px; flex: none; color: var(--color-primary); filter: drop-shadow(0 0 6px color-mix(in srgb, var(--color-primary) 70%, transparent)); }
+.trust-list li:nth-child(2) svg { color: var(--color-secondary); filter: drop-shadow(0 0 6px color-mix(in srgb, var(--color-secondary) 80%, transparent)); }
+.trust-list li:nth-child(3) svg { color: var(--color-pink); filter: drop-shadow(0 0 6px color-mix(in srgb, var(--color-pink) 70%, transparent)); }
+.trust-list li:nth-child(4) svg { color: var(--color-magenta); filter: drop-shadow(0 0 6px color-mix(in srgb, var(--color-magenta) 70%, transparent)); }
+@media (min-width: 900px) { .trust-list { grid-template-columns: repeat(4, 1fr); justify-items: center; padding: 30px 0; } }
+
+/* ---------- About ---------- */
+.about-grid { display: grid; gap: clamp(40px, 6vw, 80px); align-items: center; }
+.portrait {
+  position: relative; width: min(82%, 420px); margin-inline: auto;
+  border-radius: 999px 999px var(--radius-lg) var(--radius-lg);
+  padding: 2px; background: var(--spectrum);
+  box-shadow: 0 0 60px -12px color-mix(in srgb, var(--color-secondary) 70%, transparent);
+}
+.portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 999px 999px calc(var(--radius-lg) - 2px) calc(var(--radius-lg) - 2px); background: var(--color-surface); }
+.portrait-stat {
+  position: absolute; right: -6px; bottom: 28px;
+  padding: 14px 18px; border-radius: var(--radius-md);
+  background: rgba(8, 9, 26, .88); border: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.portrait-stat strong { display: block; font-family: var(--font-display); font-size: 2rem; line-height: 1; color: var(--color-primary); text-shadow: 0 0 16px color-mix(in srgb, var(--color-primary) 60%, transparent); }
+.portrait-stat span { font-size: .85rem; color: var(--color-muted); }
+.about-body p + p { margin-top: 16px; }
+.about-body > p { color: var(--color-muted); max-width: 36rem; }
+.about-name { font-family: var(--font-display); font-style: italic; font-size: 1.35rem; color: var(--color-text); margin-bottom: 18px; }
+.philosophy {
+  margin: 28px 0 32px; padding: 4px 0 4px 22px; border-left: 2px solid var(--color-pink);
+  font-family: var(--font-display); font-style: italic; font-size: clamp(1.25rem, 3.4vw, 1.5rem); line-height: 1.4; color: var(--color-text);
+}
+@media (min-width: 900px) { .about-grid { grid-template-columns: 0.85fr 1.15fr; } .portrait-stat { right: -28px; } }
+
+/* ---------- Services ---------- */
+.services-grid { display: grid; gap: 18px; }
+.service {
+  position: relative; display: flex; flex-direction: column;
+  padding: clamp(24px, 4vw, 32px); border-radius: var(--radius-lg);
+  background: var(--glass); border: 1px solid var(--line);
+  transition: border-color .3s ease, transform .3s ease;
+}
+.service:hover { border-color: color-mix(in srgb, var(--color-primary) 45%, transparent); transform: translateY(-3px); }
+.service-glyph { width: 44px; height: 44px; margin-bottom: 20px; color: var(--color-primary); filter: drop-shadow(0 0 8px color-mix(in srgb, var(--color-primary) 60%, transparent)); }
+.service:nth-child(2) .service-glyph { color: var(--color-pink); filter: drop-shadow(0 0 8px color-mix(in srgb, var(--color-pink) 60%, transparent)); }
+.service:nth-child(3) .service-glyph { color: var(--color-secondary); filter: drop-shadow(0 0 8px color-mix(in srgb, var(--color-secondary) 70%, transparent)); }
+.service:nth-child(4) .service-glyph { color: var(--color-magenta); filter: drop-shadow(0 0 8px color-mix(in srgb, var(--color-magenta) 60%, transparent)); }
+.service h3 { font-size: 1.65rem; }
+.service p { margin-top: 10px; color: var(--color-muted); flex: 1; }
+.service-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 22px 0 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.service-meta .duration { font-size: .92rem; color: var(--color-muted); }
+.service-meta .price { font-family: var(--font-display); font-size: 1.7rem; font-weight: 600; }
+@media (min-width: 700px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; } }
+
+/* ---------- Pricing ---------- */
+.pricing-grid { display: grid; gap: 22px; align-items: stretch; }
+.plan {
+  position: relative; display: flex; flex-direction: column;
+  padding: 32px clamp(24px, 4vw, 34px); border-radius: var(--radius-lg);
+  background: var(--glass); border: 1px solid var(--line);
+}
+.plan--featured {
+  border: 1px solid transparent;
+  background: linear-gradient(#0c0e26, #0c0e26) padding-box, var(--spectrum) border-box;
+  box-shadow: 0 0 50px -10px color-mix(in srgb, var(--color-secondary) 65%, transparent);
+}
+.plan-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  padding: 5px 14px; border-radius: 999px; white-space: nowrap;
+  font-size: .78rem; font-weight: 700; letter-spacing: .04em; color: #fff;
+  background: linear-gradient(100deg, var(--color-secondary), var(--color-pink));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--color-pink) 60%, transparent);
+}
+.plan h3 { font-size: 1.5rem; }
+.plan-price { margin: 14px 0 6px; font-family: var(--font-display); font-size: 3.2rem; font-weight: 600; line-height: 1; }
+.plan-desc { color: var(--color-muted); }
+.plan ul { list-style: none; margin: 24px 0 30px; padding: 0; display: grid; gap: 12px; flex: 1; align-content: start; }
+.plan li { display: flex; gap: 12px; font-size: .98rem; line-height: 1.45; }
+.plan li::before { content: ""; flex: none; width: 7px; height: 7px; margin-top: 8px; border-radius: 50%; background: var(--color-primary); box-shadow: 0 0 8px var(--color-primary); }
+.plan--featured li::before { background: var(--color-pink); box-shadow: 0 0 8px var(--color-pink); }
+@media (min-width: 900px) {
+  .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+  .plan--featured { transform: translateY(-14px); }
+}
+
+/* ---------- Benefits ---------- */
+.benefits-grid { display: grid; gap: 14px; list-style: none; margin: 0; padding: 0; }
+.benefit { display: flex; gap: 18px; padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--line); background: rgba(10, 13, 31, .5); }
+.benefit svg { width: 30px; height: 30px; flex: none; margin-top: 2px; color: var(--color-primary); }
+.benefit:nth-child(3n+2) svg { color: var(--color-pink); }
+.benefit:nth-child(3n) svg { color: var(--color-secondary); }
+.benefit h3 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; line-height: 1.3; letter-spacing: 0; }
+.benefit p { margin-top: 6px; color: var(--color-muted); font-size: .97rem; line-height: 1.55; }
+@media (min-width: 700px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .benefits-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---------- How it works ---------- */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 40px; counter-reset: step; position: relative; }
+.step { text-align: center; max-width: 320px; margin-inline: auto; position: relative; }
+.step-num {
+  width: 64px; height: 64px; margin: 0 auto 20px; display: grid; place-items: center;
+  border-radius: 50%; font-family: var(--font-display); font-size: 1.7rem; font-weight: 600;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box, var(--spectrum) border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 0 26px -2px color-mix(in srgb, var(--color-secondary) 70%, transparent);
+  position: relative; z-index: 1;
+}
+.step h3 { font-size: 1.5rem; }
+.step p { margin-top: 10px; color: var(--color-muted); }
+@media (min-width: 800px) {
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .steps::before { content: ""; position: absolute; top: 32px; left: 17%; right: 17%; height: 1px; background: var(--spectrum); opacity: .6; }
+}
+
+/* ---------- Testimonials ---------- */
+.quotes { display: grid; gap: 18px; }
+.quote { margin: 0; padding: clamp(26px, 4vw, 34px); border-radius: var(--radius-lg); background: var(--glass); border: 1px solid var(--line); display: flex; flex-direction: column; }
+.quote-mark { font-family: var(--font-display); font-size: 3.6rem; line-height: .6; height: 26px; color: var(--color-pink); text-shadow: 0 0 18px color-mix(in srgb, var(--color-pink) 70%, transparent); }
+.quote blockquote { margin: 0; flex: 1; font-family: var(--font-display); font-size: 1.28rem; line-height: 1.45; }
+.quote figcaption { margin-top: 22px; font-size: .92rem; color: var(--color-muted); }
+.quote figcaption strong { display: block; color: var(--color-text); font-weight: 700; }
+@media (min-width: 900px) { .quotes { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---------- Newsletter ---------- */
+.newsletter-panel {
+  position: relative; overflow: hidden; text-align: center;
+  padding: clamp(40px, 7vw, 72px) clamp(22px, 5vw, 64px); border-radius: 28px;
+  border: 1px solid transparent;
+  background: linear-gradient(160deg, #0d1030, #150a2a) padding-box, var(--spectrum) border-box;
+  box-shadow: 0 0 80px -20px color-mix(in srgb, var(--color-primary) 45%, transparent);
+}
+.newsletter-panel .section-intro { max-width: 30rem; margin-inline: auto; }
+.signup { margin: 30px auto 0; max-width: 520px; display: flex; flex-direction: column; gap: 12px; }
+.signup input {
+  width: 100%; min-height: 52px; padding: 12px 22px; border-radius: 999px;
+  border: 1px solid rgba(170, 167, 201, .35); background: rgba(4, 4, 12, .7);
+  color: var(--color-text); font: 500 1rem var(--font-body);
+}
+.signup input::placeholder { color: #8b88ad; }
+.signup input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 30%, transparent); }
+.signup-note { margin-top: 14px; font-size: .88rem; color: var(--color-muted); min-height: 1.4em; }
+@media (min-width: 560px) { .signup { flex-direction: row; } .signup .btn { flex: none; } }
+
+/* ---------- Contact ---------- */
+.contact-grid { display: grid; gap: 40px; align-items: start; }
+.contact-lead p { color: var(--color-muted); margin-top: 16px; max-width: 32rem; }
+.contact-lead .btn { margin-top: 30px; }
+.contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.contact-list a {
+  display: flex; align-items: center; gap: 16px; min-height: 60px; padding: 12px 18px;
+  border-radius: var(--radius-md); border: 1px solid var(--line); background: rgba(10, 13, 31, .5);
+  text-decoration: none; transition: border-color .2s, background-color .2s;
+  overflow-wrap: anywhere;
+}
+.contact-list a:hover { border-color: color-mix(in srgb, var(--color-pink) 55%, transparent); background: rgba(18, 20, 48, .7); }
+.contact-list svg { width: 22px; height: 22px; flex: none; color: var(--color-primary); }
+.contact-list small { display: block; font-size: .8rem; color: var(--color-muted); }
+.contact-list span { font-weight: 600; line-height: 1.3; }
+@media (min-width: 900px) { .contact-grid { grid-template-columns: 1fr 1fr; gap: 64px; } }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--line); padding: 44px 0 36px; font-size: .92rem; color: var(--color-muted); }
+.footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
+.social { display: flex; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.social a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); color: var(--color-text); transition: border-color .2s, color .2s, box-shadow .2s; }
+.social a:hover { color: var(--color-primary); border-color: var(--color-primary); box-shadow: 0 0 16px -2px color-mix(in srgb, var(--color-primary) 60%, transparent); }
+.social svg { width: 18px; height: 18px; }
+.footer-bottom { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { text-decoration: none; }
+.footer-links a:hover { color: var(--color-text); }
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .rise { opacity: 1; transform: none; }
+}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================= NAVIGATION ================= -->
+<header class="site-header" id="top">
+  <nav class="nav wrap" aria-label="Main">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="16" cy="16" r="14" stroke="url(#brandGrad)"/>
+        <path d="M20 8.5a8 8 0 1 0 3.5 11.2A6.5 6.5 0 1 1 20 8.5z" fill="url(#brandGrad)" stroke="none"/>
+        <defs><linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--color-primary)"/><stop offset=".5" style="stop-color:var(--color-secondary)"/><stop offset="1" style="stop-color:var(--color-pink)"/></linearGradient></defs>
+      </svg>
+      <!-- CHANGE YOUR BUSINESS NAME in the CONFIG at the bottom of this file -->
+      <span data-config="businessName">Lunara Astrology</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span></button>
+    <ul class="nav-menu" id="site-menu">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="btn btn--solid btn--sm" href="#contact" data-config-href="bookingLink">Book a session</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div>
+      <!-- CHANGE YOUR TAGLINE, HEADLINE AND INTRO in the CONFIG at the bottom of this file -->
+      <p class="hero-kicker rise" data-config="tagline">Astrology &amp; intuitive guidance</p>
+      <h1 class="hero-title rise" id="hero-title" data-config="headline">Align with the sky you were born under</h1>
+      <p class="hero-text rise" data-config="heroText">Personal astrology readings, cosmic guidance, and intuitive sessions designed to bring clarity to your path.</p>
+      <div class="hero-actions rise">
+        <a class="btn btn--solid" href="#contact" data-config-href="bookingLink">Book a reading</a>
+        <a class="btn btn--ghost" href="#services">Explore services</a>
+      </div>
+    </div>
+
+    <!-- Decorative zodiac wheel (pure SVG + CSS, no images needed) -->
+    <div class="hero-visual rise" aria-hidden="true">
+      <div class="wheel-ring"></div>
+      <svg class="wheel" viewBox="-200 -200 400 400">
+        <defs>
+          <linearGradient id="spec" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" style="stop-color:var(--color-primary)"/>
+            <stop offset=".5" style="stop-color:var(--color-secondary)"/>
+            <stop offset="1" style="stop-color:var(--color-pink)"/>
+          </linearGradient>
+          <radialGradient id="core"><stop offset="0" style="stop-color:var(--color-secondary)" stop-opacity=".35"/><stop offset="1" style="stop-color:var(--color-secondary)" stop-opacity="0"/></radialGradient>
+        </defs>
+        <!-- Classic 12-sign wheel, signs in traditional counter-clockwise order -->
+        <g class="spin-slow">
+          <circle r="186" fill="none" stroke="rgba(237,235,250,.18)"/>
+          <circle r="146" fill="none" stroke="rgba(237,235,250,.22)"/>
+          <g stroke="rgba(237,235,250,.2)">
+            <line y1="-146" y2="-186"/><line y1="-146" y2="-186" transform="rotate(30)"/><line y1="-146" y2="-186" transform="rotate(60)"/>
+            <line y1="-146" y2="-186" transform="rotate(90)"/><line y1="-146" y2="-186" transform="rotate(120)"/><line y1="-146" y2="-186" transform="rotate(150)"/>
+            <line y1="-146" y2="-186" transform="rotate(180)"/><line y1="-146" y2="-186" transform="rotate(210)"/><line y1="-146" y2="-186" transform="rotate(240)"/>
+            <line y1="-146" y2="-186" transform="rotate(270)"/><line y1="-146" y2="-186" transform="rotate(300)"/><line y1="-146" y2="-186" transform="rotate(330)"/>
+          </g>
+          <g fill="#edebfa" font-size="20" text-anchor="middle" dominant-baseline="central" opacity=".85">
+            <text transform="rotate(345) translate(0,-166)">&#9800;&#xFE0E;</text>
+            <text transform="rotate(315) translate(0,-166)">&#9801;&#xFE0E;</text>
+            <text transform="rotate(285) translate(0,-166)">&#9802;&#xFE0E;</text>
+            <text transform="rotate(255) translate(0,-166)">&#9803;&#xFE0E;</text>
+            <text transform="rotate(225) translate(0,-166)">&#9804;&#xFE0E;</text>
+            <text transform="rotate(195) translate(0,-166)">&#9805;&#xFE0E;</text>
+            <text transform="rotate(165) translate(0,-166)">&#9806;&#xFE0E;</text>
+            <text transform="rotate(135) translate(0,-166)">&#9807;&#xFE0E;</text>
+            <text transform="rotate(105) translate(0,-166)">&#9808;&#xFE0E;</text>
+            <text transform="rotate(75) translate(0,-166)">&#9809;&#xFE0E;</text>
+            <text transform="rotate(45) translate(0,-166)">&#9810;&#xFE0E;</text>
+            <text transform="rotate(15) translate(0,-166)">&#9811;&#xFE0E;</text>
+          </g>
+        </g>
+        <circle r="120" fill="url(#core)"/>
+        <g class="spin-rev">
+          <circle r="108" fill="none" stroke="url(#spec)" stroke-opacity=".55" stroke-dasharray="2 6"/>
+          <!-- aspect lines -->
+          <polygon points="0,-108 93.5,54 -93.5,54" fill="none" style="stroke:var(--color-primary)" stroke-opacity=".55"/>
+          <polygon points="0,108 93.5,-54 -93.5,-54" fill="none" style="stroke:var(--color-pink)" stroke-opacity=".45"/>
+          <circle cx="0" cy="-108" r="5" style="fill:var(--color-primary)"/>
+          <circle cx="93.5" cy="54" r="4" style="fill:var(--color-secondary)"/>
+          <circle cx="-93.5" cy="-54" r="4.5" style="fill:var(--color-pink)"/>
+        </g>
+        <circle r="62" fill="none" stroke="rgba(237,235,250,.25)"/>
+        <!-- crescent -->
+        <path d="M14 -34 A36 36 0 1 0 14 34 A28 28 0 1 1 14 -34 Z" fill="url(#spec)"/>
+      </svg>
+      <div class="moon-phases" style="position:absolute;left:0;right:0;bottom:-40px;">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#edebfa" stroke-opacity=".5"/></svg>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#edebfa" stroke-opacity=".5"/><path d="M12 3a9 9 0 0 1 0 18 5 9 0 0 0 0-18z" fill="#edebfa" fill-opacity=".7"/></svg>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#edebfa" fill-opacity=".9"/></svg>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#edebfa" stroke-opacity=".5"/><path d="M12 3a9 9 0 0 0 0 18 5 9 0 0 1 0-18z" fill="#edebfa" fill-opacity=".7"/></svg>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#edebfa" stroke-opacity=".5"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST STRIP ================= -->
+<section class="trust" aria-label="What we offer">
+  <ul class="wrap trust-list">
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l2.4 7.2H22l-6.2 4.5 2.4 7.3L12 16.5 5.8 21l2.4-7.3L2 9.2h7.6z"/></svg>Personalized guidance</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="5"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/></svg>Birth chart readings</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>Relationship astrology</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Intuitive sessions</li>
+  </ul>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="wrap about-grid">
+    <div class="portrait">
+      <!-- DEMO CONTENT — REPLACE BEFORE PUBLISHING: placeholder portrait + fictional name in the alt text. -->
+      <!-- REPLACE THIS IMAGE: put your photo in the assets folder and change the file name below.
+           A portrait (taller than wide) around 800 x 1000 pixels looks best. Update the alt text too. -->
+      <img src="assets/guide-portrait.svg" alt="Portrait of Selene Marwood, astrologer" width="600" height="750" loading="lazy">
+      <div class="portrait-stat">
+        <!-- DEMO CONTENT — REPLACE BEFORE PUBLISHING: "12+ years" is a fictional sample claim. Change it to your real experience or delete this whole <div class="portrait-stat">. -->
+        <strong>12+</strong><span>years reading charts</span>
+      </div>
+    </div>
+    <div class="about-body">
+      <div class="spectral-rule"></div>
+      <h2 class="section-title" id="about-title">Meet your guide</h2>
+      <!-- DEMO CONTENT — REPLACE BEFORE PUBLISHING: "Selene Marwood" and this biography are fictional.
+           Change your name, bio and philosophy quote in the CONFIG at the bottom of this file. -->
+      <p class="about-name" data-config="guideName" style="margin-top:14px">Selene Marwood</p>
+      <p data-config="aboutText">I've been reading charts for over a decade, first for friends, then for clients across four continents. My sessions blend traditional astrology with intuitive insight, so you leave with more than symbols: you leave with language for what you're living through.</p>
+      <p data-config="aboutText2">Whether you're at a crossroads, starting something new, or simply curious about the sky you were born under, I'll meet you where you are.</p>
+      <blockquote class="philosophy" data-config="philosophy">Your chart isn't a fixed fate. It's a map, and you're still the one walking.</blockquote>
+      <a class="btn btn--ghost" href="#services">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section section--surface" id="services" aria-labelledby="services-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="spectral-rule"></div>
+      <h2 class="section-title" id="services-title">Readings &amp; sessions</h2>
+      <!-- DEMO CONTENT — REPLACE BEFORE PUBLISHING: service descriptions, durations and prices below are samples. Make sure they match what you actually offer. -->
+      <p class="section-intro">Every session is recorded and held over video call, so you can join from anywhere.</p>
+    </div>
+    <div class="services-grid">
+      <!-- SERVICE 1 — DEMO CONTENT — REPLACE BEFORE PUBLISHING: title, description, duration and price -->
+      <article class="service">
+        <svg class="service-glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="24" cy="24" r="20"/><circle cx="24" cy="24" r="12"/><path d="M24 4v8M24 36v8M4 24h8M36 24h8M10 10l6 6M32 32l6 6M38 10l-6 6M16 32l-6 6"/></svg>
+        <h3>Birth Chart Reading</h3>
+        <p>A full walkthrough of your natal chart: your sun, moon and rising, the planets that shape you, and the themes that keep returning.</p>
+        <div class="service-meta"><span class="duration">60 minutes</span><span class="price">$75</span></div>
+        <!-- CHANGE THIS BUTTON'S LINK (e.g. a Calendly or Stripe link for this session) -->
+        <a class="btn btn--ghost btn--block" href="#contact" data-config-href="bookingLink">Book this session</a>
+      </article>
+      <!-- SERVICE 2 — DEMO CONTENT — REPLACE BEFORE PUBLISHING: title, description, duration and price -->
+      <article class="service">
+        <svg class="service-glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="18" cy="24" r="12"/><circle cx="30" cy="24" r="12"/><path d="M24 14v20"/></svg>
+        <h3>Relationship Reading</h3>
+        <p>Compare two charts to see where you flow, where you clash, and how to meet each other with more understanding.</p>
+        <div class="service-meta"><span class="duration">75 minutes</span><span class="price">$95</span></div>
+        <a class="btn btn--ghost btn--block" href="#contact" data-config-href="bookingLink">Book this session</a>
+      </article>
+      <!-- SERVICE 3 — DEMO CONTENT — REPLACE BEFORE PUBLISHING: title, description, duration and price -->
+      <article class="service">
+        <svg class="service-glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="24" cy="24" r="8"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M38.1 9.9l-4.2 4.2M14.1 33.9l-4.2 4.2"/></svg>
+        <h3>Year Ahead Reading</h3>
+        <p>Your solar return and major transits for the next twelve months, with the best windows for starting, resting and deciding.</p>
+        <div class="service-meta"><span class="duration">60 minutes</span><span class="price">$85</span></div>
+        <a class="btn btn--ghost btn--block" href="#contact" data-config-href="bookingLink">Book this session</a>
+      </article>
+      <!-- SERVICE 4 — DEMO CONTENT — REPLACE BEFORE PUBLISHING: title, description, duration and price -->
+      <article class="service">
+        <svg class="service-glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 24s7.2-13 20-13 20 13 20 13-7.2 13-20 13S4 24 4 24z"/><circle cx="24" cy="24" r="6"/><path d="M24 2v4M16 4l1.5 3.5M32 4l-1.5 3.5"/></svg>
+        <h3>Intuitive Guidance Session</h3>
+        <p>Bring the question that's been sitting with you. We'll explore it through intuition, cards and the current sky.</p>
+        <div class="service-meta"><span class="duration">45 minutes</span><span class="price">$60</span></div>
+        <a class="btn btn--ghost btn--block" href="#contact" data-config-href="bookingLink">Book this session</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="section" id="pricing" aria-labelledby="pricing-title">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <div class="spectral-rule"></div>
+      <h2 class="section-title" id="pricing-title">Choose your reading</h2>
+      <p class="section-intro">Simple packages, no subscriptions. Pick the depth that fits where you are right now.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- PACKAGE 1 — DEMO CONTENT — REPLACE BEFORE PUBLISHING. CHANGE YOUR PRICE HERE -->
+      <article class="plan">
+        <h3>Mini Reading</h3>
+        <p class="plan-price">$35</p>
+        <p class="plan-desc">One focused question, answered through your chart.</p>
+        <ul>
+          <li>30-minute video call</li>
+          <li>Focus on one life area</li>
+          <li>Session recording</li>
+        </ul>
+        <a class="btn btn--ghost btn--block" href="#contact" data-config-href="bookingLink">Book the mini reading</a>
+      </article>
+      <!-- PACKAGE 2 (highlighted) — DEMO CONTENT — REPLACE BEFORE PUBLISHING. CHANGE YOUR PRICE HERE -->
+      <article class="plan plan--featured">
+        <span class="plan-badge">Most popular</span>
+        <h3>Full Chart</h3>
+        <p class="plan-price">$75</p>
+        <p class="plan-desc">Your complete natal chart, explained in plain language.</p>
+        <ul>
+          <li>60-minute video call</li>
+          <li>Planets, houses and key aspects</li>
+          <li>Written summary to keep</li>
+          <li>Session recording</li>
+        </ul>
+        <a class="btn btn--solid btn--block" href="#contact" data-config-href="bookingLink">Book the full chart</a>
+      </article>
+      <!-- PACKAGE 3 — DEMO CONTENT — REPLACE BEFORE PUBLISHING. CHANGE YOUR PRICE HERE -->
+      <article class="plan">
+        <h3>Deep Dive</h3>
+        <p class="plan-price">$125</p>
+        <p class="plan-desc">Natal chart, current transits and your year ahead in one session.</p>
+        <ul>
+          <li>90-minute video call</li>
+          <li>Transits and year-ahead forecast</li>
+          <li>Detailed written guidance notes</li>
+          <li>Two weeks of follow-up questions by email</li>
+        </ul>
+        <a class="btn btn--ghost btn--block" href="#contact" data-config-href="bookingLink">Book the deep dive</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BENEFITS ================= -->
+<section class="section section--surface" aria-labelledby="benefits-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="spectral-rule"></div>
+      <h2 class="section-title" id="benefits-title">Why clients return</h2>
+    </div>
+    <!-- DEMO CONTENT — REPLACE BEFORE PUBLISHING: make sure each benefit is true for your business (e.g. written notes, follow-up emails, privacy of recordings). -->
+    <ul class="benefits-grid">
+      <li class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><div><h3>Personalized interpretation</h3><p>No copy-paste horoscopes. Every reading starts from your exact birth time and place.</p></div></li>
+      <li class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h8M9 17h6"/></svg><div><h3>Clear written guidance</h3><p>Leave with notes you can come back to, not just a memory of a conversation.</p></div></li>
+      <li class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-8-4.5-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 6.5-8 11-8 11z"/></svg><div><h3>Judgment-free sessions</h3><p>Ask anything. Whatever you bring is welcome and held with care.</p></div></li>
+      <li class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg><div><h3>Practical insight</h3><p>Astrology translated into real choices about work, love, timing and rest.</p></div></li>
+      <li class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><h3>Private consultations</h3><p>Your chart and your story stay between us. Recordings are shared only with you.</p></div></li>
+      <li class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg><div><h3>Follow-up notes</h3><p>Questions come up after a reading. Deep Dive clients can email for two weeks.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section" aria-labelledby="steps-title">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <div class="spectral-rule"></div>
+      <h2 class="section-title" id="steps-title">How it works</h2>
+    </div>
+    <!-- DEMO CONTENT — REPLACE BEFORE PUBLISHING: adjust the steps and the "48 hours" delivery promise to match how you work. -->
+    <ol class="steps">
+      <li class="step"><div class="step-num" aria-hidden="true">1</div><h3>Choose your reading</h3><p>Pick the session that fits your question, or start with a mini reading.</p></li>
+      <li class="step"><div class="step-num" aria-hidden="true">2</div><h3>Book your time</h3><p>Choose a slot that suits you and share your birth date, time and place.</p></li>
+      <li class="step"><div class="step-num" aria-hidden="true">3</div><h3>Receive your guidance</h3><p>Meet on video, then receive your recording and written notes within 48 hours.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section section--surface" id="testimonials" aria-labelledby="testimonials-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="spectral-rule"></div>
+      <h2 class="section-title" id="testimonials-title">Kind words</h2>
+    </div>
+    <div class="quotes">
+      <!-- DEMO CONTENT — REPLACE BEFORE PUBLISHING: all three testimonials and client names are fictional.
+           Replace them with real client quotes (with permission) or delete this section. Never publish invented reviews. -->
+      <!-- TESTIMONIAL 1 -->
+      <figure class="quote">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <blockquote><p>Her reading gave me language for things I had felt for years. I left the call lighter than I've felt in months.</p></blockquote>
+        <figcaption><strong>Maya R.</strong>Birth Chart Reading</figcaption>
+      </figure>
+      <!-- TESTIMONIAL 2 — DEMO CONTENT — REPLACE BEFORE PUBLISHING -->
+      <figure class="quote">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <blockquote><p>We booked a relationship reading as a joke gift. It turned into the most honest conversation we've had.</p></blockquote>
+        <figcaption><strong>Jordan &amp; Sam</strong>Relationship Reading</figcaption>
+      </figure>
+      <!-- TESTIMONIAL 3 — DEMO CONTENT — REPLACE BEFORE PUBLISHING -->
+      <figure class="quote">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <blockquote><p>The year-ahead notes live on my desk. I've checked them before every big decision since.</p></blockquote>
+        <figcaption><strong>Priya S.</strong>Year Ahead Reading</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EMAIL SIGNUP ================= -->
+<section class="section" aria-labelledby="news-title">
+  <div class="wrap">
+    <div class="newsletter-panel">
+      <h2 class="section-title" id="news-title">Cosmic notes for your inbox</h2>
+      <p class="section-intro">Receive astrology insights, upcoming offers, and celestial updates.</p>
+      <!-- EMAIL SIGNUP FORM
+           This form does NOT send anywhere until you connect it.
+           Paste the form address from Mailchimp, ConvertKit (Kit), Buttondown,
+           Beehiiv or Formspree into "newsletterFormAction" in the CONFIG at the
+           bottom of this file. See README.md, "Connect your email signup". -->
+      <form class="signup" id="signup-form" method="post" novalidate>
+        <label class="sr-only" for="signup-email">Email address</label>
+        <input id="signup-email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+        <button class="btn btn--solid" type="submit">Subscribe</button>
+      </form>
+      <p class="signup-note" id="signup-note" role="status" aria-live="polite">One email a month. Unsubscribe any time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT / BOOKING ================= -->
+<section class="section section--surface" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div class="contact-lead">
+      <div class="spectral-rule"></div>
+      <h2 class="section-title" id="contact-title">Ready to book?</h2>
+      <p>Choose a time that works for you. Have your birth date, time and place ready. If you don't know your birth time, send a message and we'll work with what you have.</p>
+      <!-- CHANGE YOUR BOOKING LINK in the CONFIG at the bottom of this file -->
+      <a class="btn btn--solid" href="#pricing" data-config-href="bookingLink">Book a session</a>
+    </div>
+    <!-- DEMO CONTENT — REPLACE BEFORE PUBLISHING: email, phone and social handles are samples. Change them in the CONFIG at the bottom of this file. -->
+    <ul class="contact-list">
+      <li><a href="mailto:hello@lunaraastrology.com" data-config-href="email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+        <div><small>Email</small><span data-config="email">hello@lunaraastrology.com</span></div></a></li>
+      <li data-phone-row><a href="tel:+15550100123" data-config-href="phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+        <div><small>Phone</small><span data-config="phone">+1 (555) 010-0123</span></div></a></li>
+      <li><a href="https://www.instagram.com/" data-config-href="instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <div><small>Instagram</small><span data-config="instagramHandle">@lunara.astrology</span></div></a></li>
+      <li><a href="https://www.tiktok.com/" data-config-href="tiktok" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 3v12.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 3 2.5 5 6 5"/></svg>
+        <div><small>TikTok</small><span data-config="tiktokHandle">@lunara.astrology</span></div></a></li>
+      <li><a href="https://www.youtube.com/" data-config-href="youtube" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>
+        <div><small>YouTube</small><span data-config="youtubeHandle">Lunara Astrology</span></div></a></li>
+      <li><a href="https://www.facebook.com/" data-config-href="facebook" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6v3.5h3V21h3.5v-7.5h3L16 10h-3.5V7a1 1 0 0 1 1-1H15z"/></svg>
+        <div><small>Facebook</small><span data-config="facebookHandle">Lunara Astrology</span></div></a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#top"><span data-config="businessName">Lunara Astrology</span></a>
+      <ul class="social" aria-label="Social media">
+        <li><a href="https://www.instagram.com/" data-config-href="instagram" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a></li>
+        <li><a href="https://www.tiktok.com/" data-config-href="tiktok" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3v12.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 3 2.5 5 6 5"/></svg></a></li>
+        <li><a href="https://www.youtube.com/" data-config-href="youtube" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></a></li>
+        <li><a href="https://www.facebook.com/" data-config-href="facebook" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6v3.5h3V21h3.5v-7.5h3L16 10h-3.5V7a1 1 0 0 1 1-1H15z"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2026</span> <span data-config="businessName">Lunara Astrology</span>. All rights reserved.</p>
+      <div class="footer-links">
+        <!-- PRIVACY + TERMS: these stay hidden until you add real page addresses
+             as privacyLink and termsLink in the CONFIG. See README.md. -->
+        <a href="#" data-config-href="privacyLink" data-legal hidden>Privacy</a>
+        <a href="#" data-config-href="termsLink" data-legal hidden>Terms</a>
+        <!-- DESIGN CREDIT — you may delete this line -->
+        <span>Designed with Prismwave</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ==================================
+   EASY CUSTOMIZATION START — YOUR DETAILS
+   Change the text between the quotes. Keep the quotes and the comma at the end.
+   Everything here updates automatically across the whole page.
+   ================================== */
+const CONFIG = {
+  businessName: "Lunara Astrology",           // CHANGE YOUR BUSINESS NAME HERE
+  tagline:      "Astrology & intuitive guidance",
+  headline:     "Align with the sky you were born under",
+  heroText:     "Personal astrology readings, cosmic guidance, and intuitive sessions designed to bring clarity to your path.",
+
+  // DEMO CONTENT — REPLACE BEFORE PUBLISHING: fictional name, bio and quote
+  guideName:    "Selene Marwood",
+  aboutText:    "I've been reading charts for over a decade, first for friends, then for clients across four continents. My sessions blend traditional astrology with intuitive insight, so you leave with more than symbols: you leave with language for what you're living through.",
+  aboutText2:   "Whether you're at a crossroads, starting something new, or simply curious about the sky you were born under, I'll meet you where you are.",
+  philosophy:   "Your chart isn't a fixed fate. It's a map, and you're still the one walking.",
+
+  // CHANGE YOUR BOOKING LINK HERE (Calendly, Acuity, Stripe payment link, etc.)
+  // Leave as "#contact" until you have one.
+  bookingLink:  "#contact",   // DEMO: replace with your real booking page
+
+  // DEMO CONTENT — REPLACE BEFORE PUBLISHING: sample email + phone (555 numbers are fictional)
+  email:        "hello@lunaraastrology.com",  // CHANGE YOUR EMAIL HERE
+  phone:        "+1 (555) 010-0123",          // Leave empty "" to hide the phone row
+
+  // CHANGE YOUR SOCIAL LINKS HERE (DEMO CONTENT — REPLACE BEFORE PUBLISHING)
+  // Samples open each platform's home page. Paste your own profile addresses.
+  instagram:       "https://www.instagram.com/",
+  instagramHandle: "@lunara.astrology",
+  tiktok:          "https://www.tiktok.com/",
+  tiktokHandle:    "@lunara.astrology",
+  youtube:         "https://www.youtube.com/",
+  youtubeHandle:   "Lunara Astrology",
+  facebook:        "https://www.facebook.com/",
+  facebookHandle:  "Lunara Astrology",
+
+  // PRIVACY + TERMS: paste full addresses of your policy pages, e.g.
+  // "https://yoursite.com/privacy.html". While empty, the footer links stay hidden.
+  privacyLink:  "",
+  termsLink:    "",
+
+  // EMAIL SIGNUP: paste your form address from Mailchimp, Kit, Buttondown,
+  // Beehiiv or Formspree here, e.g. "https://formspree.io/f/abcdwxyz"
+  newsletterFormAction: ""
+};
+/* ==================================
+   EASY CUSTOMIZATION END
+   You don't need to edit anything below this line.
+   ================================== */
+
+(function () {
+  "use strict";
+
+  // Fill text
+  document.querySelectorAll("[data-config]").forEach(function (el) {
+    var v = CONFIG[el.getAttribute("data-config")];
+    if (typeof v === "string" && v !== "") el.textContent = v;
+  });
+
+  // Fill links
+  document.querySelectorAll("[data-config-href]").forEach(function (el) {
+    var key = el.getAttribute("data-config-href");
+    var v = CONFIG[key];
+    if (typeof v !== "string" || v === "") return;
+    if (key === "bookingLink" && v === "#contact" && el.closest("#contact")) return; // avoid linking to itself
+    if (key === "email") v = "mailto:" + v;
+    else if (key === "phone") v = "tel:" + v.replace(/[^\d+]/g, "");
+    el.setAttribute("href", v);
+    // Open outside links (like Calendly) in a new tab; keep page anchors in place
+    if (/^https?:/i.test(v)) { el.setAttribute("target", "_blank"); el.setAttribute("rel", "noopener"); }
+    else if (v.charAt(0) === "#") { el.removeAttribute("target"); el.removeAttribute("rel"); }
+  });
+
+  // Show Privacy/Terms links only once real addresses are set
+  document.querySelectorAll("[data-legal]").forEach(function (el) {
+    if (CONFIG[el.getAttribute("data-config-href")]) el.hidden = false;
+  });
+
+  // Hide phone row if no phone
+  if (!CONFIG.phone) {
+    var row = document.querySelector("[data-phone-row]");
+    if (row) row.remove();
+  }
+
+  // Footer year
+  var year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Mobile menu
+  var header = document.querySelector(".site-header");
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.getElementById("site-menu");
+  function setMenu(open) {
+    if (!toggle || !menu) return;
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    menu.classList.toggle("is-open", open);
+    header.classList.toggle("menu-open", open);
+  }
+  if (toggle && menu) {
+    toggle.addEventListener("click", function () {
+      setMenu(toggle.getAttribute("aria-expanded") !== "true");
+    });
+    menu.addEventListener("click", function (e) {
+      if (e.target.closest("a")) setMenu(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("is-open")) { setMenu(false); toggle.focus(); }
+    });
+    document.addEventListener("click", function (e) {
+      if (menu.classList.contains("is-open") && !header.contains(e.target)) setMenu(false);
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 900) setMenu(false);
+    });
+  }
+
+  // Header background after scrolling
+  function onScroll() { header.classList.toggle("is-scrolled", window.scrollY > 10); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Email signup
+  var form = document.getElementById("signup-form");
+  var note = document.getElementById("signup-note");
+  if (form) {
+    if (CONFIG.newsletterFormAction) form.setAttribute("action", CONFIG.newsletterFormAction);
+    form.addEventListener("submit", function (e) {
+      var input = form.querySelector("input[type=email]");
+      if (!input.value || !input.checkValidity()) {
+        e.preventDefault();
+        note.textContent = "Enter a valid email address, like name@example.com.";
+        input.focus();
+        return;
+      }
+      if (!CONFIG.newsletterFormAction) {
+        // Not connected yet: send visitors to email instead of pretending it worked
+        e.preventDefault();
+        note.innerHTML = "";
+        note.append("Our mailing list opens soon. To join now, email ");
+        var a = document.createElement("a");
+        a.href = "mailto:" + CONFIG.email + "?subject=Add%20me%20to%20your%20list";
+        a.textContent = CONFIG.email;
+        note.append(a, ".");
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
